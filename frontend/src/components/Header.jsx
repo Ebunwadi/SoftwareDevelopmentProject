@@ -51,6 +51,7 @@ const Header = () => {
 						<MdOutlineSettings size={20} />
 					</Link>
 					<Button size={"xs"} onClick={logout}>
+						Logout
 						<FiLogOut size={20} />
 					</Button>
 				</Flex>

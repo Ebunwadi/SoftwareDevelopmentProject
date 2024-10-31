@@ -122,6 +122,12 @@ export default function LoginCard() {
 									Sign up
 								</Link>
 							</Text>
+							<Text align={"center"}>
+								Forgot Password?{" "}
+								<Link color={"blue.400"} onClick={() => setAuthScreen("signup")}>
+									Click Here
+								</Link>
+							</Text>
 						</Stack>
 					</Stack>
 				</Box>
