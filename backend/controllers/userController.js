@@ -35,7 +35,7 @@ const signupUser = async (req, res) => {
 	try {
 		const { name, email, username, password } = req.body;
 		if(!email.includes("coventry.ac.uk")) {
-			return res.status(400).json({ error: "sorry, only coventry university students can acces this app" });
+			return res.status(400).json({ error: "sorry, only coventry university students can access this app" });
 		}
 		const user = await User.findOne({ $or: [{ email }, { username }] });
 

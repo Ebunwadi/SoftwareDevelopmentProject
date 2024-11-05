@@ -1,6 +1,6 @@
+import { v2 as cloudinary } from "cloudinary";
 import Post from "../models/postModel.js";
 import User from "../models/userModel.js";
-import { v2 as cloudinary } from "cloudinary";
 
 // code by Albert
 const createPost = async (req, res) => {
@@ -222,4 +222,5 @@ const getUserPosts = async (req, res) => {
 	}
 };
 
-export { createPost, getPost, deletePost, likeUnlikePost, replyToPost, getFeedPosts, getUserPosts, updatePost };
+export { createPost, deletePost, getFeedPosts, getPost, getUserPosts, likeUnlikePost, replyToPost, updatePost };
+
