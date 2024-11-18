@@ -3,7 +3,6 @@ import sinon from 'sinon';
 import supertest from 'supertest';
 import express from 'express';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcryptjs';
 import mongoose from 'mongoose';
 import { MongoMemoryServer } from 'mongodb-memory-server';
 
@@ -14,6 +13,7 @@ import {
   freezeAccount,
 } from '../../controllers/userController.js';
 import User from '../../models/userModel.js';
+import { after, before, beforeEach, describe, it } from 'mocha';
 
 const { expect } = chai;
 const app = express();

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { expect } from 'chai';
 import sinon from 'sinon';
 import { io as Client } from 'socket.io-client';
@@ -37,15 +38,19 @@ describe('Socket.IO Server', function () {
         clientSocket.close(); // Disconnect client after each test
     });
 
-    it('should connect a client and emit online users', (done) => {
-        clientSocket.once('getOnlineUsers', (onlineUsers) => {
-            expect(onlineUsers).to.include('user1'); // Check that 'user1' is in the online list
-            done();
+    it('should connect a client and emit online users',
+        (done) => {
+        clientSocket.once('getOnlineUsers',
+        (onlineUsers) => {
+        expect(onlineUsers).to.include('user1');
+        done();
         });
     });
 
-    it('should handle markMessagesAsSeen event and emit messagesSeen', (done) => {
-        clientSocket.emit('markMessagesAsSeen', { conversationId: 'conversation1', userId: 'user1' });
+    it('should handle markMessagesAsSeen event and emit messagesSeen',
+        (done) => {
+        clientSocket.emit('markMessagesAsSeen',
+        { conversationId: 'conversation1', userId: 'user1' });
 
         clientSocket.once('messagesSeen', (data) => {
             expect(data).to.have.property('conversationId', 'conversation1');

@@ -33,9 +33,11 @@
 		"socket.io-client": "^4.8.1"
 	},
 	"devDependencies": {
+		"@eslint/js": "^9.14.0",
 		"chai": "^4.3.10",
 		"chai-http": "^4.4.0",
 		"cross-env": "^7.0.3",
+		"eslint": "^9.14.0",
 		"mocha": "^10.2.0",
 		"mongodb-memory-server": "^10.1.2",
 		"nodemon": "^3.0.1",

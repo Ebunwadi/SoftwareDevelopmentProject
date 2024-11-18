@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 // code by Alex
 import User from "../models/userModel.js";
 import jwt from "jsonwebtoken";

@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { v2 as cloudinary } from "cloudinary";
 import Post from "../models/postModel.js";
 import User from "../models/userModel.js";

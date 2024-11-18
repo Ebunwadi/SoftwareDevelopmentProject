@@ -1,15 +1,13 @@
+/* eslint-disable no-undef */
 import chai from 'chai';
 import sinon from 'sinon';
 import supertest from 'supertest';
 import express from 'express';
 import Post from '../../models/postModel.js';
 import {
-    createPost,
     deletePost,
-    getPost,
     likeUnlikePost,
     getFeedPosts,
-    getUserPosts,
 } from '../../controllers/postController.js';
 
 const { expect } = chai;

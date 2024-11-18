@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { Server } from "socket.io";
 import http from "http";
 import express from "express";
@@ -28,9 +29,12 @@ io.on("connection", (socket) => {
 
 	socket.on("markMessagesAsSeen", async ({ conversationId, userId }) => {
 		try {
-			await Message.updateMany({ conversationId: conversationId, seen: false }, { $set: { seen: true } });
-			await Conversation.updateOne({ _id: conversationId }, { $set: { "lastMessage.seen": true } });
-			io.to(userSocketMap[userId]).emit("messagesSeen", { conversationId });
+			await Message.updateMany({ conversationId: conversationId, seen: false },
+				{ $set: { seen: true } });
+			await Conversation.updateOne({ _id: conversationId }, 
+				{ $set: { "lastMessage.seen": true } });
+			io.to(userSocketMap[userId]).emit("messagesSeen",
+				{ conversationId });
 		} catch (error) {
 			console.log(error);
 		}

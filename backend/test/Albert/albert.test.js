@@ -7,10 +7,9 @@ import {
     createPost,
     deletePost,
     getPost,
-    likeUnlikePost,
-    getFeedPosts,
-    getUserPosts,
 } from '../../controllers/postController.js';
+import { beforeEach, describe, it } from 'mocha';
+
 
 const { expect } = chai;
 const app = express();
