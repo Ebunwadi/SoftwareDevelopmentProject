@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import chai from 'chai';
 import sinon from 'sinon';
 import supertest from 'supertest';

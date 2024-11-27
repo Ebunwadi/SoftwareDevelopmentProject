@@ -2,12 +2,1278 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/download.png" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Coventry Student Hub</title>
+		<link rel="icon" type="image/png" href="images/favicons/1.png" /> <!-- FAVICON -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+		<script>
+				document.write("<style>* { --rand_r=1; --rand_g=1; --rand_b=1; --rand_r_dark=1; --rand_g_dark=1; --rand_b_dark=1; }</style>");
+		</script>
+		<style>
+
+/* body { height: 120% !important; } */
+
+.css-15vqpxh {z-index: 1000 !important;}
+#floating_options {z-index: 100000 !important;}
+
+.chakra-image.css-hiayux {width: 70px !important; padding: 4px !important; /*border-radius: 10px !important; background-color: gray !important;*/ position: absolute !important; top: 0px !important; left: 0px !important; right: 0px !important; margin-inline: auto !important; }
+
+select.email_input.small_input { background-color: white !important; color: black !important; }
+
+#opaque /* the container of the whole screen obstructing structure */
+{
+	top: -1000px;
+	left: 0px;
+	width: calc( 100% - 10px );
+	position: fixed;
+	height: calc( 100% - 9px );
+	margin: 0px;
+	font-size: 100px;
+	font-family: Arial;
+	text-align: center;
+	color: rgb(243, 243, 243);
+	border: 5px solid rgba(230, 230, 0, 0.8);
+	border-top-width: 4px;
+	border-radius: 15px;
+	transition-duration: 0.7s;
+			
+	background-image: linear-gradient(rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.90));
+	z-index: 100000000 !important;
+}
+
+#opaque div /* the eye image */
+{
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: rgb(243, 243, 243);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center; 
+	background-image: url( "images/eye.webp" ); /* CHANGE URL HERE WHEN NECESSARY */
+	background-size: 150px 150px;
+	height: 150px;
+	width: 150px;
+	padding: 70px;
+	border-radius: 25%;
+}
+
+
+
+/* * { --rand_r=1; --rand_g=1; --rand_b=1; --rand_r_dark=1; --rand_g_dark=1; --rand_b_dark=1; } */
+.hide ::-webkit-scrollbar { display: none; }
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { box-shadow: inset 0 0 5px rgba(83, 83, 83); background: rgb(243, 243, 243); }
+::-webkit-scrollbar-thumb { background: rgb(143, 143, 143); cursor: ns-resize; }
+	
+.dark ::-webkit-scrollbar-track { background: rgb(43, 43, 43); }
+.dark ::-webkit-scrollbar-thumb { background: rgb(123, 123, 123); cursor: ns-resize; }
+
+.random-light ::-webkit-scrollbar-track { background: rgb(243, 243, 243); }
+.random-light ::-webkit-scrollbar-thumb { background: rgb( var(--rand_r), var(--rand_g), var(--rand_b)); cursor: ns-resize; }
+
+.random-dark ::-webkit-scrollbar-track { background: rgb(43, 43, 43); }
+.random-dark ::-webkit-scrollbar-thumb { background: rgb( var(--rand_r_dark), var(--rand_g_dark), var(--rand_b_dark)); cursor: ns-resize; }
+
+
+#encouragement {position: fixed; right: 15px; bottom: 15px; transition: 0.2s;}
+#encouragement, #encouragement_close
+{
+	margin-top: 5px;
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 10px;
+	padding: 7px 5px;
+	display: block;
+	width: fit-content;
+	font-size: 24px;
+	padding: 5px 5px 3px 15px;
+	background-color: rgb( 245, 245, 245 );
+	color: black !important;
+	z-index: 10000000 !important;
+}
+#encouragement_close 
+{
+	position: relative;
+	top: -6px;
+	padding: 2px !important;
+	line-height: 19px !important;
+	text-align: center;
+	vertical-align: middle !important;
+	width: 30px !important;
+	height: 30px !important;
+	display: inline-block !important;
+	cursor: pointer;
+	color: black !important;
+}
+
+	
+body, html
+{
+	/* background: url("images/bg/1.jpg") no-repeat center center fixed;  */
+	/* background-size: ;0 */
+	padding: 0px !important;
+	/* font-size: 24px; */
+	/* font-family: Arial; */
+	margin: 0px !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.small_input
+{
+	width: 35px !important;
+	display: inline !important;
+	padding: 1px 2px !important;
+	margin: 0px !important;
+}
+
+#scroll_button 
+{
+	margin-top: -2px !important;
+	width: 100px;
+	padding: 3px;
+	font-size: 14px !important;
+}
+
+#message_input { display: inline-block; }	
+#message_dropdown
+{
+	width: 20px;
+	height: 33px;
+	border-radius: 8px;
+	display: inline-block;
+	vertical-align: top;
+}
+
+#layout_scaling_container
+{
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 10px;
+	padding: 7px 8px !important;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	display: block;
+	width: fit-content;
+	font-size: 14px;
+	padding: 5px;
+	background-color: rgb( 225, 225, 225 );
+}
+
+#layout_scaling_input 
+{
+	width: 40px !important;
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 15%;
+	text-align: center;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: bottom;
+	color: black !important;
+	background-color: white !important;
+}
+
+#email_send, #layout_scaling_button
+{
+	margin-top: 5px;
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 10px;
+	padding: 7px 5px;
+	display: block;
+	width: 425px;
+	font-size: 14px;
+	padding: 3px 2px;
+}
+
+#layout_scaling_button 
+{
+	width: 70px !important;
+	display: inline !important;
+	height: 25px;
+	vertical-align: middle;
+	padding: 0px !important;
+	margin: 0px !important;
+	color: black !important;
+}
+
+#email_send:hover, #layout_scaling_button:hover, #scroll_button:hover, #encouragement_close:hover, #censor_toggle:hover, #opaque_toggle:hover { background-color: rgb( 225, 225, 225 ); }
+
+.email_input
+{
+	margin-top: 10px;
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 10px;
+	padding: 7px 5px;
+	display: block;
+	width: 410px;
+}
+
+#email_content
+{
+	resize: none;
+	margin-top: 10px;
+	max-width:410px;
+	min-width:410px;
+	min-height:170px;
+	max-height:170px;
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 10px;
+	padding: 7px 5px;
+	font-family: Arial;
+}
+
+#remember
+{
+	resize: none;
+	max-width:137px;
+	min-width:137px;
+	min-height:80px;
+	max-height:80px;
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 10px;
+	padding: 5px 3px;
+	font-family: Arial;
+	display: block;
+	overflow: hidden;
+	background-color: white !important;
+	color: black !important;
+	line-height: 14px !important;
+	font-size: 14px !important;
+}
+
+#remember::placeholder
+{
+	color: gray !important;
+}
+
+.fake_active_link 
+{
+	text-decoration: underline;
+	color: rgb(10, 10, 255);
+	cursor: pointer;
+}
+
+.fake_active_link:active
+{
+	color: rgb(255, 10, 10);
+}
+
+#connection_monitor
+{
+	padding: 0px;
+	margin: 0px;
+	height: 10px;
+	width: 10px;
+	position: fixed;
+	top: 15px;
+	right: 15px;
+	border-radius: 50%;
+	border-width: 3px;
+	border-style: solid;
+}
+.offline { background-color: rgb( 255, 150, 150 ); border-color: rgb( 255, 5, 5 ) !important; }
+.online { background-color: rgb( 150, 255, 150 ); border-color: rgb( 5, 255, 5 ) !important; }
+
+
+
+.text_container{
+	height: 100px;
+	width: 400px;
+	background: white;
+	border-radius: 0.5rem;
+	box-shadow: 0 0 10px 1px grey;
+	outline: none;
+	padding: 10px;
+	overflow-y: scroll;
+}
+
+.keyboard{
+	width: 400px;
+	height: 150px;
+	background-color: rgb( 214, 214, 214 );
+	border-radius: 1rem;
+	table-layout: fixed;
+	padding: 10px;
+	font-family: Arial;
+}
+
+.keyboard tr {
+	align-items: center;
+	height: 10px;
+}
+
+#space{	background: rgb(184, 184, 184) !important;	}
+#space:hover { background: rgb(174, 174, 174) !important; }
+#space:active { background: rgb(144, 144, 144) !important; }
+
+
+#capslock { text-align: left !important; padding-left: 4px; }
+#delete, #capslock, #enter {font-size: 30px;}
+
+.keyboard tr td{
+	cursor: pointer;
+	width: 30px !important;
+
+	height: 30px !important;
+	line-height: 30px;
+
+
+	user-select: none; 
+	text-align: center;
+	vertical-align: middle;
+	border-radius: 8px;
+	border: 2px solid rgb( 123, 123, 123 );
+	color: rgb(75, 75, 75);
+	background-color: rgb(224, 224, 224);		
+}
+
+.key:active{ background-color: rgb(174, 174, 174) !important; }
+.key:hover{ background-color: rgb(204, 204, 204); }
+.active{ background-color: rgb(44, 44, 44); }
+
+
+
+
+
+
+/* html { background-color: rgb(233, 233, 233); }
+html:hover { background-color: rgb(253, 253, 253); } */
+
+#floating_options 
+{
+	position: fixed !important;
+	top: 10px;
+	left: 10px;
+	background-color: rgb(43, 43, 43);
+	padding: 5px 10px;
+	border-radius: 10px;
+	border: 2px solid rgb(234, 234, 234);
+	padding-bottom: 12px !important; 
+	font-size: 15px;
+	color: rgb(254, 254, 254);
+	font-weight: bold;
+	cursor: default;
+	user-select: none; 
+	width: 160px !important;
+}
+
+.button 
+{
+	width: 32px !important;
+	height: 32px !important;
+	background-color: rgb(213, 213, 213);
+	background-size: 23px 23px;
+	border-radius: 12px !important;
+	background-repeat: no-repeat;
+	background-position: center;
+	color: black !important;
+	display: inline-block;
+}
+
+.button:hover { background-color: rgb(193, 193, 193); }
+
+#clock { font-size: 21px; }
+
+#avg_time, #timer { width: 100px !important; display: inline-block; }
+
+#opaque_toggle, #scroll_button, #layout_scaling_container, #remember { width: 100% !important; }
+
+#censor_toggle, #opaque_toggle, #scroll_button
+{
+	border: 2px solid rgb(123, 123, 123);
+	border-radius: 10px;
+	padding: 3px !important;
+	display: block;
+	width: fit-content;
+	font-size: 12px !important;
+	padding: 5px;
+	background-color: rgb( 245, 245, 245 );
+	cursor: pointer;
+	font-weight: initial !important;
+	color: rgb(0, 0, 0);
+	margin-top: 4px;
+	display: inline-block;
+}
+
+		</style>
+		<!-- !!!! THE "style.js" FILE IS AT THE END OF THE HTML, BEFORE </body> - has to be there !!!! -->
 	</head>
 	<body>
+
+		<!-- ENCOURAGEMENT - has to be on all pages -->
+		<div id="encouragement">
+			<span id="encouragement_message">Message here</span>
+			<span id="encouragement_close">×</span>
+		</div>
+
+		<!-- CONNECTION MONITOR - has to be on all pages -->
+		<div id="connection_monitor"></div>
+
+	<!-- FLOATING OPTIONS (SIDE PANEL) - has to be on all pages -->
+	<div id="floating_options">
+		<!-- <div title="The time" id="clock"></div> -->
+		<div id="time_container"><span title="Time you spent on this page so far" id="timer">Spent: 0s</span><span title="Average time you spent on a page of our website so far" id="avg_time">Avg: 0s</span></div>
+		<div id="loading_time"></div>
+		<div>
+			<div id="x_pos" style="display: inline-block; width: 60px;">x: ?</div>
+			<div id="y_pos" style="display: inline-block; width: 60px;">y: ?</div>
+		</div>
+		<div title="Your system and browser!" id="os"></div>
+		<div title="How many times you clicked on our website!" id="clicks"></div>
+		<div title="How many times you visited our website!" id="visits"></div>
+
+		<table>
+		<tr><td><div title="Refresh" onclick="location.reload()" style="background-image: url('images/refresh.png')" class="button"></div></td>
+		<td><div title="Refresh from server" onclick="location.reload(true);" style="background-image: url('images/refresh_server.png')" class="button"></div></td>
+		<!-- <td><div title="Back" onclick="history.back()" style="background-image: url('images/back.png')" class="button"></div></td>
+		<td><div title="Forward" onclick="history.forward()" style="background-image: url('images/forward.png')" class="button"></div></td>--><!--</tr>
+		
+		
+		<tr>--><td><div title="Print page" onclick="print()" style="background-image: url('images/print.png')" class="button"></div></td>
+		<!-- <td><div title="Save page" onclick="save_page_html()" style="background-image: url('images/save.png')" class="button"></div></td> -->
+		<td><div title="Back-to-top" onclick="back_to_top_actuator(true)" style="background-image: url('images/back-to-top.png')" class="button"></div></td>
+		<!-- <td><div title="Fullscreen" onclick="toggle_fullscreen()" style="background-image: url('images/fullscreen.svg')" class="button"></div></td> --></tr>
+		</table>
+
+		<button id="scroll_button" onclick="toggle_scroll()" class="email_input"></button>
+		<!-- <div onclick="toggle_censored()" id="censor_toggle" class="email_input">Censor</div> -->
+		<div onclick="toggle_opaque()" id="opaque_toggle" class="email_input">Privacy cover	(CTRL+Q)</div>
+		<div id="layout_scaling_container">
+			<input id="layout_scaling_input" value=100 type="number"></input>
+			<button id="layout_scaling_button">Rescale</button>
+		</div>
+<!-- 
+		<table>
+		<tr><td><span style="font-size: 14px;">Tab Icon: </span></td>
+		<td><select id="favicon_select" class="email_input small_input">
+			<option value="images/favicons/1.png">1</option>
+			<option value="images/favicons/2.png">2</option>
+		</select></td></tr>
+		<tr><td><span style="font-size: 14px;">Bg: </span></td>
+		<td><select id="bg_select" class="email_input small_input">
+			<option value="images/bg/1.jpg">1</option>
+			<option value="images/bg/2.jpg">2</option>
+		</select></td></tr>
+		<tr><td><span style="font-size: 14px;">Scroll: </span></td>
+		<td><select id="scroll_select" class="email_input small_input">
+			<option value="hide">0. ---- Hidden ----</option>
+			<option value="light">1. Light (Default)</option>
+			<option value="dark">2. Dark</option>
+			<option value="random-light">3. Random (Light)</option>
+			<option value="random-dark">4. Random (Dark)</option>
+		</select></td></tr>
+		<tr><td><span style="font-size: 14px;">Cursor: </span></td>
+		<td><select id="cursor_select" class="email_input small_input">
+			<option value="">0. Default</option>
+			<option value="custom_cursor.png">1. </option>
+			<option value="custom_cursor 1.png">2. </option>
+		</select></td></tr>
+		</table> -->
+
+		<textarea id="remember" placeholder="Enter here anything you want to see at all times! Saves with every key press!"></textarea>
+	</div>
+	<!-- OPAQUE SCREEN COVER - has to be on all pages -->
+	<div id="opaque"><div id="opaque_icon"></div></div>
+
+
 		<div id="root"></div>
 		<script type="module" src="/src/main.jsx"></script>
 	</body>
+
+
+	<script>
+		// export default function FRONTEND_SCRIPT() {
+
+// WORD CENSORING - !!!! HAS TO BE THE FIRST FRONTEND FEATURE IMPLEMENTED - ALL JS BEFORE IT DOES NOT GET EXECUTED !!!!
+// function get_censored ( word ) // turn "ugly" into "u**y"
+// {
+// var res = word[0]; 
+// for ( i = 1; i < word.length - 1; i = i + 1 )
+// res = res + '*';
+// res = res + word[word.length-1]
+// return res;
+// }
+
+// IMPORTANT: Do NOT use those words in code located in the "body" tag of the page.
+// IMPORTANT: The whole page gets re-made here ... so, any DOM elements you saved before this chunk of code are USELESS = they're not on the page anymore, cause the page gets re-made ... yet, it might not be a problem cause i added location.reload(); to the end of the function, which should refresh from the server
+// var censor = [ "word1", "word2", "word3", "word4", "word5", "ugly", "terrible" ]; // all words that should be censored
+// var text = document.getElementsByTagName("body")[0].innerHTML; // get just the body tag to censor it
+// var text_initial = text; // used to revert the text to uncensored
+// function toggle_censored () {
+// var do_censor;
+// if (localStorage.hasOwnProperty('censor'))
+// 	do_censor = localStorage.getItem("censor");
+// else
+// 	do_censor = "no" // do not censor by default
+
+// if ( do_censor === "no" ) // it's "no" here cause we toggle it
+// { 
+// for ( i_cnsr = 0; i_cnsr < censor.length; i_cnsr = i_cnsr + 1 )
+// 	text = text.replaceAll(censor[i_cnsr], get_censored(censor[i_cnsr])); // censor all words in it
+// document.body.innerHTML = text; // show censored words on page
+// localStorage.setItem("censor", "yes");
+// document.getElementById( "censor_toggle" ).innerText = "Uncensor"; // CANNOT STORE IN VARIABLE = UI GETS RE-MADE
+// }
+// else
+// {
+// document.body.innerHTML = text_initial; // show consored words on page
+// localStorage.setItem("censor", "no");
+// document.getElementById( "censor_toggle" ).innerText = "Censor"; // CANNOT STORE IN VARIABLE = UI GETS RE-MADE
+// }
+// }
+
+// IF CENSORING HINDERS DEVELOPMENT, COMMENT THE WHOLE FOLLOWING "IF" STATEMENT OUT
+// if ( localStorage.hasOwnProperty('censor') ) // here so that if censoring is turned off, there is no processing about it = there's only processing about it if the censoring is turned on ... when we do the demo and have a backend, maybe just disable this whole if ... we just need to show that it functions once in the page ... we click it twice to revert it to "uncensored"
+// {
+// if ( localStorage.getItem("censor") === "yes" ) // if it's set to "no", just leave the page as is, do not re-make it
+// {
+// for ( i_cnsr = 0; i_cnsr < censor.length; i_cnsr = i_cnsr + 1 )
+// 	text = text.replaceAll(censor[i_cnsr], get_censored(censor[i_cnsr])); // censor all words in it
+// document.body.innerHTML = text; // show censored words on page
+// document.getElementById( "censor_toggle" ).innerText = "Uncensor"; // CANNOT STORE IN VARIABLE = UI GETS RE-MADE
+// }
+// }
+
+
+
+side_panel = document.getElementById("floating_options");
+side_panel_state = true;
+if ( localStorage.hasOwnProperty( "side_panel_state" ) )
+{
+	console.log(localStorage.getItem("side_panel_state"));
+	side_panel_state = localStorage.getItem("side_panel_state");
+	if ( side_panel_state == "false" )
+	{
+		side_panel_state = false
+		side_panel.style.transition="0s";
+		side_panel.style.left = "-200px";
+	}
+	else
+	{
+		side_panel_state = true
+		side_panel.style.transition="0s";
+		side_panel.style.left = "10px";
+	}
+}
+function toggle_side_panel ()
+{
+	side_panel.style.transition="1s";
+	if ( side_panel_state == true )
+		side_panel.style.left = "-200px";
+	else
+		side_panel.style.left = "10px";
+	side_panel_state = !side_panel_state;
+	localStorage.setItem( "side_panel_state", String( side_panel_state ) );
+}
+
+
+// SCREEN PRIVACY
+var opaque = document.getElementById( "opaque" ); // getting it
+// the following function can be combined with the kaydown handling function from "back-to-top.html"
+function keydown_function(e) { // CTRL+Q to toggle screen privacy
+	var evtobj = window.event? event : e
+	if (evtobj.keyCode == 81 && evtobj.ctrlKey) // CTRL+Q to toggle screen privacy
+		toggle_opaque();
+	if (evtobj.keyCode == 38 && evtobj.ctrlKey) // CTRL+UP_ARROW to scroll to top of page
+		back_to_top_actuator(true);
+	if (evtobj.keyCode == 40 && evtobj.ctrlKey) // CTRL+DOWN_ARROW to scroll to end of page
+		back_to_top_actuator(false);
+	if (evtobj.keyCode == 89 && evtobj.ctrlKey) // CTRL+Y to toggle side panel
+		toggle_side_panel();
+}
+document.onkeydown = keydown_function;
+
+function toggle_opaque() // toggle function for screen privacy
+{
+var reveal_opaque = false;
+if ( opaque.getAttribute( "visible" ) != "on" )
+{
+opaque.setAttribute( "visible", "on" );
+reveal_opaque = true
+}
+else
+opaque.setAttribute( "visible", "off" );
+
+if ( reveal_opaque == true )
+{
+// opaque.style.display="block";
+opaque.style.top = "0px";
+}
+else
+{
+// opaque.style.display="none";
+opaque.style.top = "-1000px";
+}
+}
+
+function back_to_top_actuator ( top ) // makes a back-to-top link and clicks it
+{
+if ( top == true )
+{
+/* For this method: */ window.scrollTo(0, 0);
+// the document might not really scroll, if you have nested elements. In this case, you need to target the element that scrolls and use its scroll height instead: nestedElement.scrollTo(0, nestedElement.scrollHeight);
+// functions just fine, see if it functions well when included in the actual project code
+}
+else
+window.scrollTo(0, document.body.scrollHeight);
+}
+
+
+
+
+// REMEMBER
+remember = document.getElementById("remember");
+if ( localStorage.hasOwnProperty( "remember" ) )
+remember.value = localStorage.getItem("remember");
+remember.addEventListener('keydown', (event) => {
+setTimeout(function () { // tried adding event.key to the value, but when you delete everything, it doesnt function anyotherhow, besides like this ... 
+e = localStorage.setItem("remember", remember.value);
+}, 100);
+});
+
+
+
+
+
+
+
+// ENCOURAGEMENTS
+encouragements = [ "You can do anything!", "Great! You are learning!", "Way to go!", "Yeah! Keep learning!" ]
+encouragement = document.getElementById("encouragement");
+encouragement_message = document.getElementById("encouragement_message");
+encouragement_message.innerText = encouragements[Math.floor(Math.random() * encouragements.length)];
+encouragement.style.bottom = "-50px";
+time_interval = 5; // change this, leave it like every 5min ... 5*60*1000
+time_interval_stay = 1; // change this, leave it like every 1min ... 60*1000
+setInterval(function () {
+if ( encouragement.style.bottom == "-50px" )
+encouragement_message.innerText = encouragements[Math.floor(Math.random() * encouragements.length)];
+encouragement.style.bottom = "15px";
+setTimeout(function () {
+encouragement.style.bottom = "-50px";
+}, time_interval_stay*60*1000);
+}, time_interval*60*1000);
+encouragement_close = document.getElementById("encouragement_close");
+encouragement_close.addEventListener('click', (event) => {
+encouragement.style.bottom = "-50px";
+});
+
+
+
+
+
+
+
+// FAVICON AND BG SELECTION
+// bg_select = document.getElementById("bg_select");
+// if ( localStorage.hasOwnProperty( "bg" ) )
+// {
+// e = localStorage.getItem("bg");
+// document.body.style.backgroundImage = "url(" + e + ")";
+// bg_select.value = e;
+// }
+
+// bg_select.addEventListener('change', (event) => {
+// e = event.target.value;
+// document.body.style.backgroundImage = "url(" + e + ")";
+// localStorage.setItem("bg", e);
+// });
+
+
+
+
+
+// if favicons dont apply, resize them to 16 x 16px
+// var favicon = document.querySelector("link[rel~='icon']");
+// favicon_select = document.getElementById("favicon_select");
+// if ( localStorage.hasOwnProperty( "favicon" ) )
+// {
+// e = localStorage.getItem("favicon");
+// favicon.href = e;
+// favicon_select.value = e;
+// }
+
+// favicon_select.addEventListener('change', (event) => {
+// e = event.target.value;
+// favicon.href = e;
+// localStorage.setItem("favicon", e);
+// location.reload();
+// });
+
+
+// //  hide show scroll
+// //	html.classList.add('hide');
+// //	html.classList.remove('hide');
+
+// scroll_select = document.getElementById("scroll_select");
+// html = document.querySelector("html");
+
+
+// // SET SCROLL TYPE
+// function remove_scroll_class ( scroll_class )
+// {
+// if ( html.classList.contains( scroll_class ) )
+// html.classList.remove( scroll_class )
+// }
+// function resolve_scroll ( scroll_value )
+// {
+// scroll_select.value = scroll_value;
+// if ( scroll_value == "hide" )
+// {
+// html.classList.add("hide");
+// remove_scroll_class("dark");
+// remove_scroll_class("random-light");
+// remove_scroll_class("random-dark");
+// }
+// if ( scroll_value == "light" )
+// {
+// remove_scroll_class("hide");
+// remove_scroll_class("dark");
+// remove_scroll_class("random-light");
+// remove_scroll_class("random-dark");
+// }
+// if ( scroll_value == "dark" )
+// {
+// html.classList.add("dark");
+// remove_scroll_class("random-light");
+// remove_scroll_class("random-dark");
+// remove_scroll_class("hide");
+// }
+// if ( scroll_value == "random-light" )
+// {
+// html.classList.add("random-light");
+// remove_scroll_class("dark");
+// remove_scroll_class("random-dark");
+// remove_scroll_class("hide");
+// }
+// if ( scroll_value == "random-dark" )
+// {
+// html.classList.add("random-dark");
+// remove_scroll_class("dark");
+// remove_scroll_class("random-light");
+// remove_scroll_class("hide");
+// }
+// }
+
+// document.querySelector("*").style.setProperty('--rand_r', Math.floor(Math.random()*155))
+// document.querySelector("*").style.setProperty('--rand_r_dark', Math.floor(Math.random()*155+100))
+// document.querySelector("*").style.setProperty('--rand_g', Math.floor(Math.random()*155))
+// document.querySelector("*").style.setProperty('--rand_g_dark', Math.floor(Math.random()*155+100))
+// document.querySelector("*").style.setProperty('--rand_b', Math.floor(Math.random()*155))
+// document.querySelector("*").style.setProperty('--rand_b_dark', Math.floor(Math.random()*155+100))
+
+// if ( localStorage.hasOwnProperty( "scroll" ) )
+// resolve_scroll(localStorage.getItem("scroll"));
+
+// scroll_select.addEventListener('change', (event) => {
+// resolve_scroll( event.target.value );
+// localStorage.setItem("scroll", event.target.value);
+// location.reload();
+// });
+
+
+
+
+
+
+// SCROLL TYPE TOGGLE
+smooth_scroll = "yes";
+if ( localStorage.hasOwnProperty( "scroll" ) )
+smooth_scroll = localStorage.getItem( "scroll" );
+
+scroll_button = document.getElementById("scroll_button");
+
+function set_scroll()
+{
+scroll_css = "<"+"style"+" id=\"scroll_style\"> html { scroll-behavior: smooth; } <"+"/style"+">";
+head = document.getElementsByTagName("head")[0];
+if ( smooth_scroll == "yes" )
+{
+if ( document.body.getAttribute("style") != null )
+	document.body.setAttribute("style", document.body.getAttribute("style").replaceAll( "scroll-behavior: initial !important;", "" ))
+document.body.setAttribute("style", document.body.getAttribute("style") + "scroll-behavior: smooth !important;");
+scroll_button.innerText = "Scroll: Smooth";
+}
+else
+{
+if ( document.body.getAttribute("style") != null )
+	document.body.setAttribute("style", document.body.getAttribute("style").replaceAll( "scroll-behavior: smooth !important;", "" ))
+document.body.setAttribute("style", document.body.getAttribute("style") + "scroll-behavior: initial !important;");
+scroll_button.innerText = "Scroll: Default";
+}
+}
+set_scroll();
+
+function toggle_scroll ()
+{
+if ( smooth_scroll == "yes" )
+smooth_scroll = "no"
+else
+smooth_scroll = "yes"
+localStorage.setItem( "scroll", smooth_scroll );
+set_scroll();
+}
+
+
+
+
+
+
+
+
+// PREPARED ANSWERS
+// prepared_answers = ["Ok!", "I'll talk to you in a moment ... ", "I cannot talk today. Sorry.", "" ];
+
+// message_dropdown = document.getElementById("message_dropdown");
+// message_input = document.getElementById("message_input");
+
+// for ( var i = 0; i < prepared_answers.length; i = i + 1 )	
+// message_dropdown.innerHTML = message_dropdown.innerHTML + "<option value=\""+prepared_answers[i]+"\" >"+prepared_answers[i]+"</option>";
+
+// message_dropdown.addEventListener('change', (event) => {
+// message_input.value = event.target.value;
+// });
+
+
+
+
+
+
+
+
+// PAGE SCALING
+layout_scaling_input = document.getElementById("layout_scaling_input");
+layout_scaling_button = document.getElementById("layout_scaling_button");
+
+layout_scaling_button.addEventListener ('click', () => {
+scaling = layout_scaling_input.value;
+if ( scaling < 70 ) { layout_scaling_input.value=70; return; }
+if ( scaling > 500 ) { layout_scaling_input.value=500; return; }
+
+document.body.style.zoom = String(scaling)+"%";
+});
+
+
+
+
+
+
+
+
+// EMAIL USING JUST FRONTEND - only 199 emails left to send ... 
+// (function(){
+// emailjs.init({
+// publicKey: "uhGCNrtebETvc-fdY",
+// });
+// })();
+// send = document.getElementById("email_send");
+// send.addEventListener ('click', () => {
+
+// email_content = document.getElementById("email_content").value;
+// email_subject = document.getElementById("email_subject").value;
+// email_name = document.getElementById("email_name").value;
+// email_sender = document.getElementById("email_sender").value;
+// email_phone = document.getElementById("email_phone").value;
+
+// let params = {
+// 	subject: email_subject,
+// 	message: email_content,
+// 	name: email_name,
+// 	sender_email: email_sender,
+// 	sender_phone: email_phone
+// }	
+
+// emailjs.send("service_e5zfbgo", "template_fvez4vb", params)
+// .then(function (response) {
+// console.log('SUCCESS!', response.status, response.text);
+// }, function (error) {
+// console.log('FAILED...', error);
+// });
+// });
+
+
+
+// TOGGLE FULLSCREEN
+function toggle_fullscreen() { // used to toggle fullscreen
+var is_fullscreen = (document.fullscreenElement && document.fullscreenElement !== null)
+
+var el = document.documentElement;
+if (!is_fullscreen) {
+if (el.requestFullscreen) {
+	el.requestFullscreen();
+	const link = document.querySelectorAll( 'div[onclick="toggle_fullscreen()"]' )[0];
+	link.title = "Un-fullscreen" // changing the name of the link
+	// link.style.backgroundImage = "url('images/unfullscreen.svg')";
+}
+} else {
+if (document.exitFullscreen) {
+	document.exitFullscreen();
+	const link = document.querySelectorAll( 'div[onclick="toggle_fullscreen()"]' )[0];
+	link.title = "Fullscreen" // changing the name of the link
+	// link.style.backgroundImage = "url('images/fullscreen.svg')";
+}
+}
+}
+if (document.fullscreenElement && document.fullscreenElement !== null) // should be here, even if you cannot really browse it in fullscreen, for some reason ... maybe when there's more pages, it's gonna matter
+{
+const link = document.querySelectorAll( 'div[onclick="toggle_fullscreen()"]' )[0];
+link.title = "Un-fullscreen" // changing the name of the link
+link.style.backgroundImage = "url('images/unfullscreen.svg')";
+}
+
+
+
+
+
+
+// SAVE PAGE (as HTML)
+function save_page_html() {
+
+const html_elem = document.documentElement; // get the whole HTML document, as "DOM element"
+const html_outer = html_elem.outerHTML; // get the outer html = need to nodify
+const blob = new Blob( [ html_outer ], { type: "text/html" } );
+const blobUri = URL.createObjectURL( blob ); // make a blob-type link that triggers page downloading
+
+const download_link = document.createElement( 'A' ); // make a link for page downloading, then click it
+download_link.href = blobUri;
+download_link.download = document.title + '.html'; // set page title
+download_link.id = 'save-page'; // for easy selection
+
+document.body.appendChild( download_link ); // add link to page
+download_link.click(); // click it
+
+window.setTimeout( () => { // remove the added link, after waiting for the page downloa to have been triggered
+const link = document.querySelectorAll( '#save-page[href][download]' )[0];
+URL.revokeObjectURL( link.href );
+link.remove();
+}, 40000 );
+}
+
+
+
+
+
+// INTERNET CONNECTION MONITOR (shown in top right corner)
+var connection_monitor = document.getElementById( "connection_monitor" );
+conn = (window.navigator.onLine ? 'on' : 'off') + 'line'; // visualise initial state using a CSS class
+connection_monitor.classList.add( conn );
+connection_monitor.title = conn; // set onhover title attribute as well
+
+window.addEventListener('online', () => set_connection_monitor( true )); // bind function to online event
+window.addEventListener('offline', () => set_connection_monitor( false )); // bind function to offline event
+
+function set_connection_monitor ( status ) // function the change the "connection_monitor"
+{
+if ( status == true )
+{
+connection_monitor.title = "online"; // set onhover title attribute
+if ( connection_monitor.classList.contains("offline") ) // remove the class for the other state if present
+	connection_monitor.classList.remove("offline");
+connection_monitor.classList.add("online"); // add class for current state
+}
+else
+{
+connection_monitor.title = "offline"; // set onhover title attribute
+if ( connection_monitor.classList.contains("online") ) // remove the class for the other state if present
+	connection_monitor.classList.remove("online");
+connection_monitor.classList.add("offline"); // add class for current state
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CUSTOM CURSORS
+// cursor_select = document.getElementById("cursor_select");
+// if ( localStorage.hasOwnProperty('cursor') ) 
+// {
+// document.body.style.cursor = "url('images/cursors/" + localStorage.getItem('cursor') + "'), default !important;";
+// cursor_select.value = localStorage.getItem('cursor');
+// }
+// function change_cursor ( cursor_url ) // change the custom cursor
+// {
+// if ( cursor_url != null )
+// {
+// localStorage.setItem("cursor", cursor_url); // save the cursor name to localStorage
+// document.body.style.cursor = "url('images/cursors/" + cursor_url + "'), default !important;";
+// }
+// else // to reset to default cursor
+// {
+// localStorage.removeItem("cursor");
+// location.reload();
+// }
+// }
+
+// cursor_select.addEventListener('change', (event) => {
+// change_cursor(event.target.value);
+// });
+
+
+
+
+
+// KEYBOARD
+// window.addEventListener('keydown', function(e) {
+// emojis = document.querySelectorAll(".keyboard")[0].children[0].children[0].children;
+// if (e.keyCode == 49 && e.ctrlKey && e.shiftKey) { emojis[0].click(); }
+// if (e.keyCode == 50 && e.ctrlKey && e.shiftKey) { emojis[1].click(); }
+// if (e.keyCode == 51 && e.ctrlKey && e.shiftKey) { emojis[2].click(); }
+// if (e.keyCode == 52 && e.ctrlKey && e.shiftKey) { emojis[3].click(); }
+// if (e.keyCode == 53 && e.ctrlKey && e.shiftKey) { emojis[4].click(); }
+// if (e.keyCode == 54 && e.ctrlKey && e.shiftKey) { emojis[5].click(); }
+// if (e.keyCode == 55 && e.ctrlKey && e.shiftKey) { emojis[6].click(); }
+// if (e.keyCode == 56 && e.ctrlKey && e.shiftKey) { emojis[7].click(); }
+// if (e.keyCode == 57 && e.ctrlKey && e.shiftKey) { emojis[8].click(); }
+// if (e.keyCode == 48 && e.ctrlKey && e.shiftKey) { emojis[9].click(); }
+// if (e.keyCode == 189 && e.ctrlKey && e.shiftKey) { emojis[10].click(); }
+// if (e.keyCode == 187 && e.ctrlKey && e.shiftKey) { emojis[11].click(); }
+// if (e.keyCode == 192 && e.ctrlKey && e.shiftKey) { emojis[12].click(); }
+// });
+
+// rows = document.querySelectorAll(".keyboard")[0].children[0].children;
+// for ( i = 0; i < rows.length; i = i + 1)
+// for ( j = 0; j < rows[i].children.length; j = j + 1)
+// rows[i].children[j].classList.add("key");
+// let all_keys = document.querySelectorAll(".key");
+
+// let is_capslock = false;
+// let text_container = document.querySelector(".text_container");
+// let delete_key = document.querySelector("#delete");
+// let enter_key = document.querySelector("#enter");
+// let space_key = document.querySelector("#space");
+// let capslock_key = document.querySelector("#capslock");
+
+// delete_key.addEventListener("click",function(){
+// let text_container_inner = text_container.innerText;
+// if(text_container_inner.length == 0){
+// return;
+// }
+// console.log(text_container_inner);
+// let newContent = text_container_inner.slice(0,text_container_inner.length-1);
+// text_container.innerText = newContent;
+// })
+
+// enter_key.addEventListener("click",function(){
+// let content = text_container.innerText;
+// let newContent = content+"\n";
+// text_container.innerText = newContent;
+// })
+
+// space_key.addEventListener("click",function(){
+// let content = text_container.innerText;
+// let newContent = content+ '\u00A0';
+// text_container.innerText = newContent;
+// })
+
+// ids = ["delete", "enter", "space", "capslock"]
+// capslock_key.addEventListener("click",function(){
+// if(is_capslock){
+// capslock_key.classList.remove("active");
+// for(let key of all_keys){
+// 	if(!ids.includes(key.id))
+// 		key.innerText = key.innerText.toLowerCase();
+// }
+// }else{
+// capslock_key.classList.add("active");
+// for(let key of all_keys){
+// 	if(!ids.includes(key.id))
+// 			key.innerText = key.innerText.toUpperCase();
+// 	}
+// }
+// is_capslock=!is_capslock
+// })
+
+// for(let key of all_keys){
+// if(ids.includes(key.id))
+//  continue;
+
+// key.addEventListener("click",function(){
+// text_container.innerText += key.innerText;
+// });
+// }
+
+
+
+
+
+
+// READING TIME
+// function get_reading_time ( e ) { return parseInt( e.innerText.length * 68 / 1000 ); }
+// document.getElementById("reading_time").innerText = String( get_reading_time( document.getElementById("post") ) ) + " seconds";
+
+
+
+
+// CLICK/VISIT COUNTER, LOADING TIME, X/Y POSITION, BROSWER/OS IDENTIFIER
+if ( localStorage.hasOwnProperty("clicks") )
+document.getElementById("clicks").innerText = "Clicks: " + String(localStorage.getItem("clicks"));
+else
+document.getElementById("clicks").innerText = "Clicks: 0";
+window.onclick = () => {
+if ( !localStorage.hasOwnProperty("clicks") )
+localStorage.setItem("clicks", 0)
+var count = localStorage.getItem("clicks");
+count++;
+localStorage.setItem("clicks", count)
+document.getElementById("clicks").innerText = "Clicks: " + String(count);
+}
+
+window.onload = function() {
+loadTime = window.performance.timing.domContentLoadedEventEnd - window.performance.timing.navigationStart;
+performanceDisplay = document.getElementById("loading_time") // get a reference to the paragraph
+performanceDisplay.innerHTML = "Load Time: <br/>" + String((loadTime / 1000).toFixed(3))+" seconds";
+performanceDisplay.innerText = "Load: " + String(loadTime)+" ms";
+var v = 1;
+if ( !localStorage.hasOwnProperty("visits") )
+localStorage.setItem("visits", 1)
+else
+{
+v = localStorage.getItem("visits");
+v++;
+localStorage.setItem("visits", v);
+}
+document.getElementById("visits").innerText = "Visits: " + String(v);
+showTime()
+}
+timer()
+document.body.setAttribute("onmouseleave", "reset_timer()");
+
+onmousemove = function(e){
+document.getElementById("x_pos").innerText = "x: " + String(Number(e.clientX).toFixed(0));
+document.getElementById("y_pos").innerText = "y: " + String(Number(e.clientY).toFixed(0));
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+const browserName = get_browser();
+document.getElementById("os").innerHTML = `${browserName}, ${navigator.userAgentData.platform}`;
+});
+
+const get_browser = () => {
+let user_agent = navigator.userAgent;
+let browser;
+if (user_agent.includes('Opr')) {
+browser = 'Opera';
+} else if (user_agent.includes('Edg')) {
+browser = 'Edge';
+} else if (user_agent.includes('Chrome')) {
+browser = 'Chrome';
+} else if (user_agent.includes('Safari')) {
+browser = 'Safari';
+} else if (user_agent.includes('Firefox')) {
+browser = 'Firefox'
+} else {
+browser = 'unknown'
+}
+
+return browser;
+}
+
+
+
+
+
+
+
+
+// CLOCK
+// Calling showTime function at every second
+// setInterval(showTime, 1000);
+
+// // Defining showTime funcion
+// function showTime() {
+// // Getting current time and date
+// let time = new Date();
+// let hour = time.getHours();
+// let min = time.getMinutes();
+// let sec = time.getSeconds();
+// am_pm = "am";
+
+// // Setting time for 12 Hrs format
+// if (hour >= 12) {
+// if (hour > 12) hour -= 12;
+// am_pm = "pm";
+// } else 
+// {
+// if (hour == 0) {
+// 	hr = 12;
+// 	am_pm = "am";
+// }
+// }
+
+// hour = hour < 10 ? "0" + hour : hour;
+// min = min < 10 ? "0" + min : min;
+// sec = sec < 10 ? "0" + sec : sec;
+
+// let time_now = hour + ":" + min + ":" + sec + am_pm;
+
+// document.getElementById( "clock" ).innerHTML = time_now;
+// }
+
+
+
+
+
+
+
+
+// TIME USER STAYS ON PAGE 
+function start_timer () { localStorage.setItem("on_page", "yes"); }
+document.body.setAttribute("onmouseenter", "start_timer()");
+
+var sec = 1;
+
+function timer(){
+	var timer = setInterval(function(){
+	if (localStorage.getItem("on_page") == "no")
+		return;
+	console.log(document.getElementsByTagName("html")[0].style.backgroundColor);
+	document.getElementById('timer').innerHTML="Spent: "+sec+"s";
+	if ( localStorage.hasOwnProperty("time_arr") )
+		time_arr = JSON.parse(localStorage.getItem("time_arr"));
+	else
+		time_arr = [];
+	avg = 0;
+	for (var i = 0; i < time_arr.length; i = i + 1 )
+		avg = avg + Number(time_arr[i]);
+	avg = parseInt(avg/time_arr.length);
+	document.getElementById('avg_time').innerHTML="Avg: "+avg+"s";
+	sec++;
+
+	if ( sec > avg )
+		document.getElementById('time_container').style.color="rgb( 34, 234, 34 )";
+	else
+		document.getElementById('time_container').style.color="rgb( 234, 114, 114 )";
+	}, 1000);
+}
+
+function reset_timer ()
+{
+if ( !localStorage.hasOwnProperty("time_arr") )
+	localStorage.setItem("time_arr", JSON.stringify([]))
+time_arr = JSON.parse(localStorage.getItem("time_arr"));
+time_arr.push(sec);
+localStorage.setItem("time_arr", JSON.stringify(time_arr))
+sec = 0;
+localStorage.setItem("on_page", "no");
+}
+
+// }
+</script> <!-- HAS TO BE HERE -->
+
+
 </html>
